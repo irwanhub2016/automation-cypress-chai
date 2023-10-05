@@ -9,15 +9,20 @@ $ git clone https://github.com/irwanhub2016/testing-flip.git
 ```
 
 ### Running Scenario Test API
-
-`$ cd automation-chai`
-`$ npm install mocha chai chai-http axios`
-`$ npm test`
+```shell
+$ cd automation-chai
+$ npm install mocha chai chai-http axios
+$ npm test
+```
 
 ### Running Scenario Test WEB
 
-`$ cd automation-cypress`
-`$ npm install npm install cypres cypres-xpath`
-`$ npx cypress run`
+```shell
+$ cd automation-cypress
+$ npm install npm install cypres cypres-xpath
+$ npx cypress run
+```
 or to run tests using a specific spec file:
-`npx cypress run --spec "cypress/e2e/spec.cy.js"`
+```shell
+npx cypress run --spec "cypress/e2e/spec.cy.js"
+```
