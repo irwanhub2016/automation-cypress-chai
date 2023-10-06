@@ -46,7 +46,7 @@ describe('Verify Telkomsel, Indosat Ooredoo, and XL', () => {
   });
 });
 
-describe('Verify serivice to send money', () => {
+describe('Verify service to send money', () => {
   let source_currency = 'IDR'
   let target_currency = 'GBP'
   let numericTotalValue;
