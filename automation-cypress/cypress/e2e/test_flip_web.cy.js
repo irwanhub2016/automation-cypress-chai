@@ -113,8 +113,6 @@ describe('Verify service to send money', () => {
       .then((text) => {
         numericTfValue = parseFloat(text.replace(/[^0-9]/g, ''));
     
-        cy.log(`Transfer fee: ${numericTfValue}`);
-
         cy.xpath("//p[contains(text(),'Total Yang Harus Kamu Bayar')]/following-sibling::p | //p[contains(text(),'Total You Have to Pay')]/following-sibling::p")
         .invoke('text')
         .then((text) => {
@@ -122,7 +120,7 @@ describe('Verify service to send money', () => {
           numericTotalValue = parseFloat(trimmedTotalText);
       
           cy.log(`Total pay: ${numericTotalValue}`);
-          cy.log(`Numeric value: ${numericTfValue}`);
+          cy.log(`Transfer fee amount: ${numericTfValue}`);
           cy.log(`Amount in Rupiah: ${amountRupiah}`);
           cy.log(`Expected Total Pay: ${numericTotalValue}`);
 
