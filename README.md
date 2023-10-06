@@ -22,7 +22,10 @@ $ cd automation-cypress
 $ npm install npm install cypres cypres-xpath
 $ npx cypress run
 ```
+
+Click test_flip.cy.js then run
+
 or to run tests using a specific spec file:
 ```shell
-npx cypress run --spec "cypress/e2e/spec.cy.js"
+npx cypress run --spec "cypress/e2e/test_flip.cy.js"
 ```
