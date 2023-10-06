@@ -27,5 +27,5 @@ Click test_flip.cy.js then run
 
 or to run tests using a specific spec file:
 ```shell
-npx cypress run --spec "cypress/e2e/test_flip.cy.js"
+npx cypress run --spec "cypress/e2e/test_flip_web.cy.js"
 ```
