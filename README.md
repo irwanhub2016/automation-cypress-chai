@@ -19,7 +19,7 @@ $ npm test
 
 ```shell
 $ cd automation-cypress
-$ npm install npm install cypres cypres-xpath
+$ npm install cypress cypress-xpath
 $ npx cypress run
 ```
 
