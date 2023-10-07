@@ -1,13 +1,14 @@
 class FlipGlobe {
     constructor() {
-      this.listCurrency = '.toggle-language label div:nth-child(1) p';
-      this.dropdownCurrency = '.toggle-language label div:nth-child(1) p';
-      this.inputCurrency = '.toggle-language label div:nth-child(1) p';
-      this.highlightedCurrency = '.toggle-language label div:nth-child(1) p';
+      this.labelFlipGlobe = 'li[class*="chakra-breadcrumb__list-item"]'
+      this.dropdownCurrency = 'button[class *= "chakra-menu__menu-button"]';
+      this.inputCurrency = 'div[class *= chakra-modal__body] input';
+      this.selectCurrencyGbp = "//p[contains(text(),'United Kingdom')]";
       this.linkFlipGlobe = '.toggle-language label div:nth-child(2) p';
       this.txtCurencyRate = "//p[contains(text(),'Current Rate')]/following-sibling::div/p | //p[contains(text(),'Kurs Saat Ini')]/following-sibling::div/p"
       this.txtTransferFee = '//p[contains(text(), "+ Biaya transfer via Flip")]/following-sibling::p | //p[contains(text(), "+ Transfer fee via Flip")]/following-sibling::p'
       this.txtTotalPay = "//p[contains(text(),'Total Yang Harus Kamu Bayar')]/following-sibling::p | //p[contains(text(),'Total You Have to Pay')]/following-sibling::p"
+
     }
     
     verify_simulation_send_money(source_currency, target_currency, amount_rupiah){  
@@ -16,22 +17,22 @@ class FlipGlobe {
       
       cy.url().should('include', '/flip-globe');
   
-      cy.get('li[class*="chakra-breadcrumb__list-item"]')
+      cy.get(this.labelFlipGlobe)
         .should('be.visible')
   
-      cy.get('button[class *= "chakra-menu__menu-button"]')
+      cy.get(this.dropdownCurrency)
         .should('be.visible')
   
-      cy.get('button[class *= "chakra-menu__menu-button"]')
+      cy.get(this.dropdownCurrency)
         .click()
   
-      cy.get('div[class *= chakra-modal__body] input')
+      cy.get(this.inputCurrency)
       .should('be.visible')
       
-      cy.get('div[class *= chakra-modal__body] input')
-        .type('GBP')
+      cy.get(this.inputCurrency)
+        .type(target_currency)
   
-      cy.xpath("//p[contains(text(),'United Kingdom')]")
+      cy.xpath(this.selectCurrencyGbp)
         .click()
   
       cy.xpath(`//input[contains(@placeholder, 'Masukkan nominal dalam ${source_currency}')] | //input[contains(@placeholder, 'Input amount in ${source_currency}')]`)
