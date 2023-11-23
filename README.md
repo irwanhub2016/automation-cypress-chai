@@ -1,4 +1,4 @@
-# Flip :: This project there are 2 parts: automation-chai (API) and automation-cypress (WEB)
+# Automation Cypress and Chai :: This project there are 2 parts: automation-chai (API) and automation-cypress (WEB)
 
 ###  ⏺ Requirement An Automation Testing
 * Assume you have instal nodejs
